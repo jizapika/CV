@@ -1,0 +1,217 @@
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{makecell}
+\usepackage[link=off]{phonenumbers}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+\usepackage{xcolor}% http://ctan.org/pkg/xcolor
+\usepackage{hyperref}% http://ctan.org/pkg/hyperref
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\usepackage[margin=0.3in]{geometry}
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.0in}
+\addtolength{\evensidemargin}{-0.0in}
+\addtolength{\textwidth}{0in}
+\addtolength{\topmargin}{20pt}
+\addtolength{\textheight}{0.0in}
+
+\urlstyle{same}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!50!red,
+    linkbordercolor=red,
+    urlcolor=blue!70!black
+}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+    \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+%-------------------------
+% Custom commands
+\def \ifempty#1{\def\temp{#1} \ifx\temp\empty }
+
+\newcommand{\resumeItem}[2]{
+    \item\small{
+        \ifempty{#1}#2\else\textbf{#1}{: #2 \vspace{-2pt}}\fi
+    }
+}
+
+\usepackage[dvipsnames]{xcolor}
+\definecolor{mygray}{gray}{0}
+\usepackage{fancybox}
+
+\usepackage{lmodern}
+\usepackage{tikz}
+
+% Style definition
+\tikzset{rndblock/.style={rounded corners,rectangle,draw,outer sep=0pt}}
+
+% Command Definition
+% 1 optional to customize the aspect, 2 mandatory: text to be framed
+\newcommand{\tframed}[2][]{\tikz[baseline=(h.base)]\node[rndblock,#1] (h) {\color{black}{#2}};}
+
+\newcommand*{\mystrut}{\rule[-0.2\baselineskip]{0pt}{0.8\baselineskip}}
+\newcommand{\skill}[1]{\tframed[lightgray]{\mystrut#1}}
+
+
+\newcommand{\resumeSubheading}[4]{
+    \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        \textbf{#1}       & \textcolor{mygray}{#2}                 \\
+        \textit{\small#3} & \textcolor{mygray}{\textit{\small #4}} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeExpSubheading}[5]{
+    \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        \textbf{#1}       & \textcolor{mygray}{#2}                 \\
+        \textit{\small#3} & \textcolor{mygray}{\textit{\small #4}} \\
+        {\scriptsize#5}
+    \end{tabular*}\vspace{4pt}
+}
+
+\newcommand{\resumeProjSubheading}[4]{
+    \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        \textbf{#1}      & \textcolor{mygray}{#2}                 \\
+        \scriptsize {#3} & \textcolor{mygray}{\textit{\small #4}} \\
+    \end{tabular*}\vspace{4pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\usepackage{changepage}
+\newcommand{\resumeDesc}[1]{\begin{adjustwidth}{5pt}{0pt}\vspace{-2pt}{\small{#1}}\end{adjustwidth}}
+
+
+\begin{document}
+
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{\Large Lev Chechulin} & Email : \href{mailto:fadyat@icloud.com}{lyovoch@bk.ru} \\
+Github: \href{https://github.com/jizapika}{jizapika} & Mobile : +7\hspace{0.5ex}999\hspace{0.5ex}232\hspace{0.5ex}32\hspace{0.5ex}70 \\
+\end{tabular*}
+
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{National Research University ITMO}
+{Saint-Petersburg, Russia}
+{Information systems and technologies}
+{Sept. 2020 - Aug. 2024 (Present)}
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+
+\resumeProjSubheading
+{\href{https://github.com/jizapika/CarShop}{Car Shop}}{}
+{\skill{Java} \skill{Spring} \skill{postgres} \skill{JPA}}{Dec. 2022}
+\resumeDesc{
+Learned the Spring Boot framework. Work with DataBase (postgres) using JPA. \\
+Application contains the autorization and registration of car sellers. \\
+It also provides an API for finding cars by color.
+}
+
+\resumeProjSubheading
+{\href{https://github.com/is-tech-y24-1/jizapika/tree/master/2laba}{Client Generator}}{}
+{\skill{C\#} \skill{Java} \skill{Roslyn} \skill{LINQ}}{Sept. 2022}
+\resumeDesc{
+For the Java server, a C\# client is generated using Roslyn. \\
+Implemented a parser for the model and controllers into a syntax tree.\\
+And then a C\# client is created using it.
+}
+
+\resumeProjSubheading
+{\href{https://github.com/is-tech-y24-1/jizapika/tree/lab-3}{Code fixer and analyzer}}{}
+{\skill{C\#} \skill{Roslyn} \skill{LINQ}}{May 2022}
+\resumeDesc{
+The analyzer finds methods that have the Try prefix in their name and issues a warning if a non-bool value is returned. \\
+After acceptance, code fixer performs a signature substitution so that it returns a bool + out parameter. \\
+It was developed using the Roslyn parser and abstract syntax tree parsing.
+}
+
+\resumeProjSubheading
+{\href{https://github.com/is-oop-y24/jizapika/tree/master/Reports}{Reports}}{}
+{\skill{C\#}\skill{Swagger}}{Mar. 2022}
+\resumeDesc{
+A server application with a multi-layer architecture has been implemented, providing an API for working with the reporting system in team development. \\
+Used Swagger for testing functionality. \\
+Implemented a Data Access Layer with using Entity Framework.
+}
+
+\resumeProjSubheading
+{\href{https://github.com/is-oop-y24/jizapika/tree/master/Banks}{Bank System}}{}
+{\skill{C\#}}{Dec. 2021}
+\resumeDesc{
+Banking system with UI. The central bank controls all transactions. There are accounts and clients for each bank.
+}
+
+\resumeSubHeadingListEnd
+
+\section{Achievements}
+\resumeSubHeadingListStart
+
+\resumeProjSubheading
+{{Competitive Programming}}{}
+{\skill{C++}\skill{Algorithms and data structure}}
+{2016 - 2020}
+\resumeDesc{
+{\href{https://neerc.ifmo.ru/archive/2020/northern/standings.html}
+{ICPC(45 place)}},
+{\href{https://codeforces.com/profile/jizapika}
+{Codeforces (2100)}}
+}
+
+\resumeProjSubheading
+{{Regional Olympics}}{}{\skill{Critical thinking}}{}
+\resumeDesc{
+Math (2014-2020), Physics (2016-2018), Programming (2017-2020)
+}
+
+\resumeSubHeadingListEnd
+
+\section{Programming Skills}
+\resumeSubHeadingListStart
+\item{
+\textbf{Languages}{: C++, C\#, Java, Python}
+}\vspace{-7pt}
+\item{
+\textbf{Technologies}{: SQL, Git, Bash, Maven }
+}
+\vspace{-7pt}
+\item{
+\textbf{Knowledge}{: Algorithms, Data Structures, Operating Systems, Databases, Object-Oriented Programming, Machine Learning}
+}
+\resumeSubHeadingListEnd
+
+\end{document}
