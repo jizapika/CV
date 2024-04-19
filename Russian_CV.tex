@@ -1,0 +1,258 @@
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{makecell}
+\usepackage[link=off]{phonenumbers}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+\usepackage{xcolor}% http://ctan.org/pkg/xcolor
+\usepackage{hyperref}% http://ctan.org/pkg/hyperref
+
+%%% Работа с русским языком
+\usepackage{cmap}					% поиск в PDF
+\usepackage{mathtext} 				% русские буквы в формулах
+\usepackage[T2A]{fontenc}			% кодировка
+\usepackage[utf8]{inputenc}			% кодировка исходного текста
+\usepackage[english,russian]{babel}	% локализация и переносы
+\usepackage{indentfirst}
+\frenchspacing
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\usepackage[margin=0.3in]{geometry}
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.0in}
+\addtolength{\evensidemargin}{-0.0in}
+\addtolength{\textwidth}{0in}
+\addtolength{\topmargin}{20pt}
+\addtolength{\textheight}{0.0in}
+
+\urlstyle{same}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!50!red,
+    linkbordercolor=red,
+    urlcolor=blue!70!black
+}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+    \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+%-------------------------
+% Custom commands
+\def \ifempty#1{\def\temp{#1} \ifx\temp\empty }
+
+\newcommand{\resumeItem}[2]{
+    \item\small{
+        \ifempty{#1}#2\else\textbf{#1}{: #2 \vspace{-2pt}}\fi
+    }
+}
+
+\usepackage[dvipsnames]{xcolor}
+\definecolor{mygray}{gray}{0}
+\usepackage{fancybox}
+
+\usepackage{lmodern}
+\usepackage{tikz}
+
+% Style definition
+\tikzset{rndblock/.style={rounded corners,rectangle,draw,outer sep=0pt}}
+
+% Command Definition
+% 1 optional to customize the aspect, 2 mandatory: text to be framed
+\newcommand{\tframed}[2][]{\tikz[baseline=(h.base)]\node[rndblock,#1] (h) {\color{black}{#2}};}
+
+\newcommand*{\mystrut}{\rule[-0.2\baselineskip]{0pt}{0.8\baselineskip}}
+\newcommand{\skill}[1]{\tframed[lightgray]{\mystrut#1}}
+
+
+\newcommand{\resumeSubheading}[4]{
+    \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        \textbf{#1}       & \textcolor{mygray}{#2}                 \\
+        \textit{\small#3} & \textcolor{mygray}{\textit{\small #4}} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeExpSubheading}[5]{
+    \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        \textbf{#1}       & \textcolor{mygray}{#2}                 \\
+        \textit{\small#3} & \textcolor{mygray}{\textit{\small #4}} \\
+        {\scriptsize#5}
+    \end{tabular*}\vspace{4pt}
+}
+
+\newcommand{\resumeProjSubheading}[4]{
+    \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        \textbf{#1}      & \textcolor{mygray}{#2}                 \\
+        \scriptsize {#3} & \textcolor{mygray}{\textit{\small #4}} \\
+    \end{tabular*}\vspace{4pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\usepackage{changepage}
+\newcommand{\resumeDesc}[1]{\begin{adjustwidth}{5pt}{0pt}\vspace{-2pt}{\small{#1}}\end{adjustwidth}}
+
+
+\begin{document}
+
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{\Large Лев Чечулин, Java-разработчик} & Email : lyovoch@bk.ru \\
+Github: \href{https://github.com/jizapika}{jizapika} & Мобильный телефон : +7\hspace{0.5ex}999\hspace{0.5ex}232\hspace{0.5ex}32\hspace{0.5ex}70 \\
+\end{tabular*}
+
+\section{Образование}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Национальный исследовательский университет ИТМО}
+{Санкт-Петербург, Россия}
+{Информационные системы и технологии}
+{Сент. 2020 - Авг. 2024 (настоящее время)}
+\resumeSubHeadingListEnd
+
+\section{Опыт работы}
+\resumeSubHeadingListStart
+
+\resumeExpSubheading
+{{Лаборатория Института дизайна и урбанистики Университета ИТМО}}{Санкт-Петербург, Россия}
+{Разработчик на Java}{Мар. 2024 - Май 2024}
+{\skill{Java 17} \skill{Gradle} \skill{Github Actions} \skill{CLI} \skill{JTS API} \skill{GeoTools API} \skill{JUnit 5} \skill{Mockito}}
+\resumeDesc{
+\begin{itemize}
+\item Написание библиотеки для автоматизации процесса планировки застройки на неровных участках с помощью алгоритмов для выравнивания рельефа, основанных на JTS и GeoTools.
+\item Покрытие кода тестами с помощью JUnit 5 и Mockito
+\item Внедрение кода в систему генерации инфраструктуры.
+\end{itemize}}
+
+\resumeExpSubheading
+{\href{https://yandex.ru/company/}{Яндекс}}{Санкт-Петербург, Россия}
+{Стажер-разработчик на Java, \href{https://www.kinopoisk.ru/}{Кинопоиск} MWP}{Авг. 2023 - Дек. 2023}
+{\skill{Java 17} \skill{Spring Boot} \skill{Spring Data JPA} \skill{WebClient vs RestTemplate} \skill{GraphQL API}}
+\resumeDesc{
+\begin{itemize}
+\item Поддержка и добавление функциональности GraphQL API для Кинопоиска
+\item Разработка коммунального асинхронного клиента для доступа к новому API другой службы с использованием WebClient,\\
+Spring Security и Spring Cache.
+\item Создание метрики для событий с использованием MeterRegistry и добавление оповещения о метрике.
+\end{itemize}}
+
+\resumeSubHeadingListEnd
+
+\section{Проекты}
+\resumeSubHeadingListStart
+
+\resumeProjSubheading
+{\href{https://github.com/jizapika/CarShop}{Автомобильный магазин}}{}
+{\skill{Java} \skill{Spring} \skill{postgres} \skill{JPA}}{Дек. 2022}
+\resumeDesc{
+Изучение фреймворка Spring Boot. Работа с базой данных (postgres) с использованием JPA. \\
+Приложение содержит авторизацию и регистрацию продавцов автомобилей. \\
+Также предоставляет API для поиска автомобилей по цвету.
+}
+
+\resumeProjSubheading
+{\href{https://github.com/is-tech-y24-1/jizapika/tree/master/2laba}{Генератор клиентов}}{}
+{\skill{C\#} \skill{Java} \skill{Roslyn} \skill{LINQ}}{Сент. 2022}
+\resumeDesc{
+Для сервера на Java генерируется клиент на C\# с использованием Roslyn. \\
+Реализован парсер модели и контроллеров в синтаксическое дерево.\\
+Затем на его основе создаётся клиент на C#.
+}
+\resumeProjSubheading
+{\href{https://github.com/is-tech-y24-1/jizapika/tree/lab-3}{Исправитель и анализатор кода}}{}
+{\skill{C\#} \skill{Roslyn} \skill{LINQ}}{Май 2022}
+\resumeDesc{
+Анализатор находит методы, название которых начинается с префикса Try, и выдаёт предупреждение, если метод возвращает значение не типа bool. После подтверждения исправления, исправитель кода изменяет сигнатуру метода так, чтобы он возвращал bool и дополнительный выходной параметр. Разработка велась с использованием парсера Roslyn и анализа абстрактных синтаксических деревьев.
+}
+
+\resumeProjSubheading
+{\href{https://github.com/is-oop-y24/jizapika/tree/master/Reports}{Система отчётности}}{}
+{\skill{C\#}\skill{Swagger}}{Март 2022}
+\resumeDesc{
+Реализована серверная часть многоуровневого приложения, предоставляющего API для работы с системой отчётности в условиях командной разработки. Для тестирования функционала использовался Swagger. В проекте реализован уровень доступа к данным с использованием Entity Framework.
+}
+
+\resumeProjSubheading
+{\href{https://github.com/is-oop-y24/jizapika/tree/master/Banks}{Банковская система}}{}
+{\skill{C\#}}{Дек. 2021}
+\resumeDesc{
+Разработана банковская система с пользовательским интерфейсом. Центральный банк контролирует все транзакции. В каждом банке созданы счета и клиенты.
+}
+
+\resumeSubHeadingListEnd
+
+\section{Достижения}
+\resumeSubHeadingListStart
+
+\resumeProjSubheading
+{{Курс по Java от Тинькофф. Весной 2023.}}{}
+{\skill{Java}\skill{Spring}\skill{Maven}\skill{JUnit5/Mockito}\skill{ORM/JDBC}\skill{Liquibase}\skill{JMS/Kafka}\skill{Docker}\skill{CI/CD}\skill{OpenAPI Specification/Swagger}}
+{Март - Май 2023}
+\resumeDesc{}
+
+\resumeProjSubheading
+{{Олимпиадное программирование}}{}
+{\skill{C++}\skill{Алгоритмы и структуры данных}}
+{2016 - 2020}
+\resumeDesc{
+{\href{https://neerc.ifmo.ru/archive/2020/northern/standings.html}
+{ICPC (45-е место)}},
+{\href{https://codeforces.com/profile/jizapika}
+{Codeforces (рейтинг 2100)}}
+}
+
+\resumeProjSubheading
+{{Региональные олимпиады}}{}{}{}
+\resumeDesc{
+Математика (2014-2020), Физика (2016-2018), Программирование (2017-2020)
+}
+
+\resumeSubHeadingListEnd
+
+\section{Программистские навыки}
+\resumeSubHeadingListStart
+\item{
+\textbf{Языки}{: C++, C\#, Java, Python}
+}\vspace{-7pt}
+\item{
+\textbf{Технологии}{: SQL, Git, Bash, Maven, Docker, Kafka }
+}
+\vspace{-7pt}
+\item{
+\textbf{Знания}{: Алгоритмы, Структуры данных, Операционные системы, Базы данных, Объектно-ориентированное программирование, Машинное обучение, Веб-программирование, UML}
+}
+\vspace{-7pt}
+\item{
+\textbf{Уровень английского}{: B1}
+}
+\resumeSubHeadingListEnd
+
+\end{document}
